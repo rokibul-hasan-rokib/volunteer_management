@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->boolean('is_completed')->default(false);
+            $table->tinyInteger('status')->nullable();
             $table->timestamps();
         });
     }
