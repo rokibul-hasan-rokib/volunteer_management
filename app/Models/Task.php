@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Task extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
+
+    public function getAllTasks() {
+        return self::query()->get();
+    }
 
     final public function prepareData(Request $request) {
         return [

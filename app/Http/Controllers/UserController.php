@@ -2,28 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ProjectController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $projects = (new Project())->getAllProjects();
-        return view('admin.modules.project.index', compact('projects'));
+        $users = (new User())->getAllUsers();
+        return view('admin.modules.user.index', compact('users'));
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('admin.modules.project.create');
+        return view('admin.modules.user.create');
     }
 
     /**
@@ -33,9 +32,9 @@ class ProjectController extends Controller
     {
         try {
             DB::beginTransaction();
-            $project = (new Project())->storeProject($request);
+            $user = (new User())->storeUser($request);
             DB::commit();
-            return redirect()->route('project.index');
+            return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;
@@ -45,29 +44,29 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(User $user)
     {
-        return view('admin.modules.project.show', compact('project'));
+        return view('admin.modules.user.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(User $user)
     {
-        return view('admin.modules.project.edit', compact('project'));
+        return view('admin.modules.user.edit', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, User $user)
     {
         try {
             DB::beginTransaction();
-            (new Project())->updateProject($request, $project);
+            (new User())->updateUser($request, $user);
             DB::commit();
-            return redirect()->route('project.index');
+            return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;
@@ -77,13 +76,13 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(User $user)
     {
         try {
             DB::beginTransaction();
-            (new Project())->deleteProject($project);
+            (new User())->deleteUser($user);
             DB::commit();
-            return redirect()->route('project.index');
+            return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;

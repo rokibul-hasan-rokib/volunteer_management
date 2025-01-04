@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Event extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
+
+    final public function getAllEvents() {
+        return self::query()->get();
+    }
 
     final public function preparaData(Request $request) {
         return [

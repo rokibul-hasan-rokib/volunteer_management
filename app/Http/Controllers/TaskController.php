@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -11,7 +13,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = (new Task())->getAllTasks();
+        return view('admin.modules.task.index', compact('tasks'));
     }
 
     /**
@@ -19,7 +22,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.modules.task.create');
     }
 
     /**
@@ -27,38 +30,62 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $task = (new Task())->storeTask($request);
+            DB::commit();
+            return redirect()->route('task.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Task $task)
     {
-        //
+        return view('admin.modules.task.show', compact('task'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Task $task)
     {
-        //
+        return view('admin.modules.task.edit', compact('task'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Task $task)
     {
-        //
+        try {
+            DB::beginTransaction();
+            (new Task())->updateTask($request, $task);
+            DB::commit();
+            return redirect()->route('task.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Task $task)
     {
-        //
+        try {
+            DB::beginTransaction();
+            (new Task())->deleteTask($task);
+            DB::commit();
+            return redirect()->route('task.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 }

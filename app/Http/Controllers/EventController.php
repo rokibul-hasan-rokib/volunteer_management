@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -11,7 +13,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = (new Event())->getAllEvents();
+        return view('admin.modules.event.index', compact('events'));
     }
 
     /**
@@ -19,7 +22,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.modules.event.create');
     }
 
     /**
@@ -27,38 +30,63 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $event = (new Event())->storeEvent($request);
+            DB::commit();
+            return redirect()->route('event.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Event $event)
     {
-        //
+        return view('admin.modules.event.show', compact('event'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Event $event)
     {
-        //
+        return view('admin.modules.event.edit', compact('event'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Event $event)
     {
-        //
+        try {
+            DB::beginTransaction();
+            (new Event())->updateEvent($request, $event);
+            DB::commit();
+            return redirect()->route('event.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Event $event)
     {
-        //
+        try {
+            DB::beginTransaction();
+            (new Event())->deleteEvent($event);
+            DB::commit();
+            return redirect()->route('event.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+            return redirect()->back();
+       }
     }
 }

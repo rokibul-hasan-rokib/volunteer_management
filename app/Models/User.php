@@ -66,6 +66,10 @@ class User extends Authenticatable
         return $query->where('status', self::STATUS_ACTIVE);
     }
 
+    final public function getAllUsers() {
+        return self::query()->get();
+    }
+
     final public function prepareData(Request $request): array
     {
         return [
@@ -98,5 +102,5 @@ class User extends Authenticatable
     {
       return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id')->toArray();
     }
-    
+
 }
