@@ -28,5 +28,11 @@ Route::resource('event', EventController::class);
 Route::resource('user', UserController::class);
 
 Route::get('/', function () {
-    return view('');
+    return view('frontend.pages.home.index');
+});
+Route::get('/contact', function () {
+    return view('frontend.pages.contact.index');
+});
+Route::get('/blogs', function () {
+    return view('frontend.pages.blog.index');
 });
