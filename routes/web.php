@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
@@ -22,6 +23,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
+
+Route::get('/register',[AuthController::class, 'loadRegister'])->name('register');
+Route::post('/register',[AuthController::class, 'register'])->name('register.store');
+Route::get('/login',[AuthController::class,'loadLogin'])->name('login.page');
+Route::post('/login',[AuthController::class,'userLogin'])->name('login');
+Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::resource('project', ProjectController::class);
 Route::resource('task', TaskController::class);
