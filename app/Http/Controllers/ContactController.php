@@ -20,5 +20,5 @@ class ContactController extends Controller
         } catch (\Throwable $th) {
             return response()->json($th);
         }
-    }111
+    }
 }

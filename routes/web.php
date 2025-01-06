@@ -27,6 +27,8 @@ Route::resource('project', ProjectController::class);
 Route::resource('task', TaskController::class);
 Route::resource('event', EventController::class);
 Route::resource('user', UserController::class);
+
+
 Route::get('/contacts',[ContactController::class, 'index'])->name('contacts');
 Route::post('/contacts',[ContactController::class, 'store'])->name('contacts.store');
 
