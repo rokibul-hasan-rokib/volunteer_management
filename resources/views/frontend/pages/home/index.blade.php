@@ -3,18 +3,7 @@
     Home
 @endsection
 @section('content')
-    <!-- banner -->
-    <section class="banner bg-cover position-relative d-flex justify-content-center align-items-center"
-        data-background="{{ asset('frontend/images/banner/banner2.jpg') }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-1 text-white font-weight-bold font-primary">Creative Agency</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /banner -->
+
 
     <!-- service -->
     <section class="section">
