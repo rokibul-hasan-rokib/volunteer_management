@@ -1,6 +1,6 @@
 <!-- footer -->
 <footer class="bg-secondary position-relative">
-    <img src="images/backgrounds/map.png" class="img-fluid overlay-image" alt="">
+    <img src="{{ asset('frontend/images/backgrounds/map.png') }}" class="img-fluid overlay-image" alt="">
     <div class="section">
       <div class="container">
         <div class="row align-items-center">
@@ -27,9 +27,10 @@
           <div class="col-md-6">
             <div class="bg-white p-4">
               <h3>Contact us</h3>
-              <form action="#">
+              <form action="{{ route('contacts.store') }} " method="POST">
+                @csrf
                 <input type="text" id="name" name="name" class="form-control mb-4 px-0" placeholder="Full name">
-                <input type="text" id="name" name="name" class="form-control mb-4 px-0" placeholder="Email address">
+                <input type="text" id="email" name="email" class="form-control mb-4 px-0" placeholder="Email address">
                 <textarea name="message" id="message" class="form-control mb-4 px-0" placeholder="Message"></textarea>
                 <button class="btn btn-primary" type="submit">Send</button>
               </form>

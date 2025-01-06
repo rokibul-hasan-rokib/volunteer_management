@@ -14,9 +14,19 @@ class ContactController extends Controller
     }
 
     final public function store(Request $request) {
+        // dd($request->all());
         try {
             $contact = (new Contact())->storeContact($request);
-            return response()->back();
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            return response()->json($th);
+        }
+    }
+
+    final public function destroy(Contact $contact) {
+        try {
+            (new Contact())->deleteContact($contact);
+            return redirect()->back();
         } catch (\Throwable $th) {
             return response()->json($th);
         }

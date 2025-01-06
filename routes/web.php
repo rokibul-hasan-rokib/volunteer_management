@@ -31,6 +31,7 @@ Route::resource('user', UserController::class);
 
 Route::get('/contacts',[ContactController::class, 'index'])->name('contacts');
 Route::post('/contacts',[ContactController::class, 'store'])->name('contacts.store');
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
 Route::get('/', function () {
     return view('frontend.pages.home.index');

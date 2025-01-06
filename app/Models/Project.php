@@ -12,7 +12,21 @@ class Project extends Model
 
     protected $guarded = [];
 
-    final public function getAllProjects(){
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
+
+    const STATUS_LIST = [
+        self::STATUS_ACTIVE => 'Active',
+        self::STATUS_INACTIVE => 'Inactive',
+    ];
+
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Retrieve all projects from the database.
+     *
+/******  bc1e92e5-03b4-41b4-802b-cae0e71c5a45  *******/
+     */
+
         return self::query()->get();
     }
 
@@ -40,6 +54,11 @@ class Project extends Model
     final public function deleteProject(Project $project)
     {
         return $project->delete();
+    }
+
+    final public function getProjectAssoc()
+    {
+      return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id')->get();
     }
 
 

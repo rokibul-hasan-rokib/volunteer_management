@@ -13,13 +13,25 @@
           {{-- @if (auth()->user()->role == \App\Models\User::ROLE_ADMIN) --}}
 
 
+
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="{{ route('user.index') }}">
+                  <i class="bi bi-person"></i>
+                  <span>User</span>
+              </a>
+          </li><!-- End Profile Page Nav -->
           <li class="nav-item">
               <a class="nav-link collapsed" href="{{ route('project.index') }}">
                   <i class="bi bi-person"></i>
                   <span>Project</span>
               </a>
           </li><!-- End Profile Page Nav -->
-
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="{{ route('event.index') }}">
+                  <i class="bi bi-person"></i>
+                  <span>Event</span>
+              </a>
+          </li><!-- End Profile Page Nav -->
           {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('abouts.index')}}">
           <i class="bi bi-envelope"></i>
