@@ -20,13 +20,7 @@ class Project extends Model
         self::STATUS_INACTIVE => 'Inactive',
     ];
 
-/*************  ✨ Codeium Command ⭐  *************/
-    /**
-     * Retrieve all projects from the database.
-     *
-/******  bc1e92e5-03b4-41b4-802b-cae0e71c5a45  *******/
-     */
-
+    final public function getAllProjects(){
         return self::query()->get();
     }
 
