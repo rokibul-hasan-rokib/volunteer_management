@@ -38,7 +38,7 @@
       </li><!-- End Blank Page Nav --> --}}
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="{{ route('contacts') }}">
           <i class="bi bi-question-circle"></i>
           <span>Contact</span>
         </a>

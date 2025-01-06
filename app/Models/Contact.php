@@ -12,6 +12,11 @@ class Contact extends Model
 
     protected $guarded = [];
 
+    final public function getAllContacts()
+    {
+        return self::query()->get();
+    }
+
     final public function prepareData(Request $request) {
         return [
           "name" => $request->input('name'),

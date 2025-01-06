@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProjectController;
@@ -26,6 +27,8 @@ Route::resource('project', ProjectController::class);
 Route::resource('task', TaskController::class);
 Route::resource('event', EventController::class);
 Route::resource('user', UserController::class);
+Route::get('/contacts',[ContactController::class, 'index'])->name('contacts');
+Route::post('/contacts',[ContactController::class, 'store'])->name('contacts.store');
 
 Route::get('/', function () {
     return view('frontend.pages.home.index');

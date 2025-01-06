@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+@extends('admin.layouts.master')
 @section('title')
     contact
 @endsection
