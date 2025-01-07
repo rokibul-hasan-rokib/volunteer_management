@@ -5,7 +5,6 @@ erbhnserthneh
 @endsection
 
 @section('content')
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -27,7 +26,7 @@ erbhnserthneh
                         <div class="card-body">
                             <h5 class="card-title">Project</h5>
                             <div class="d-flex justify-content-between mb-4">
-                                <a href="{{route('project.create')}}" class="btn btn-primary">Create Project</a>
+                                <a href="{{ route('project.create') }}" class="btn btn-primary">Create Project</a>
                             </div>
 
 
@@ -45,21 +44,29 @@ erbhnserthneh
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($projects as $project)
-                                    <tr>
-                                        <td>{{ $project->name }}</td>
-                                        <td>{{ $project->start_time }}</td>
-                                        <td>{{ $project->end_time }}</td>
-                                        <td>{{ $project->status }}</td>
-                                        <td>
-                                            <form action="{{ route('project.destroy', $project->id) }}" method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($projects as $project)
+                                        <tr>
+                                            <td>
+                                                {{ $loop->iteration }}
+                                            </td>
+                                            <td>{{ $project->name }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($project->start_date)->format('F j, Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($project->end_date)->format('F j, Y') }}</td>
+
+
+                                            <td>{{ $project->status }}</td>
+                                            <td>
+                                                <a href="{{ route('project.edit', $project->id) }}"
+                                                    class="btn btn-sm btn-warning">Edit</a>
+                                                <form action="{{ route('project.destroy', $project->id) }}" method="POST"
+                                                    style="display:inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

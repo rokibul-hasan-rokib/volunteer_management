@@ -1,6 +1,6 @@
   <!-- Title -->
   <div class="form-group">
-      {{ html()->label('Title', 'name') }}
+      {{ html()->label('Name', 'name') }}
       <x-required />
       {{ html()->text('name')->class('form-control ' . ($errors->has('name') ? 'is-invalid' : ''))->value(old('name')) }}
       <x-validation-error :error="$errors->first('name')" />
