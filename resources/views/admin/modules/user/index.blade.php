@@ -26,6 +26,10 @@ erbhnserthneh
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">User</h5>
+                            <div class="d-flex justify-content-between mb-4">
+                                <a href="{{ route('user.create') }}" class="btn btn-primary">Create User</a>
+                            </div>
+
 
 
                             <!-- Table with stripped rows -->

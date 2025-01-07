@@ -1,4 +1,4 @@
-  <!-- Title -->
+  <!-- Name -->
   <div class="form-group">
       {{ html()->label('Name', 'name') }}
       <x-required />

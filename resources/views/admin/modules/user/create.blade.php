@@ -26,13 +26,13 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Food Created Form</h5>
+                            <h5 class="card-title">User Created Form</h5>
 
                             <!-- General Form Elements -->
-                            <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @include('admin.modules.project.partials.form')
-                                <button type="submit" class="btn btn-primary">Add Food</button>
+                                @include('admin.modules.user.partials.form')
+                                <button type="submit" class="btn btn-primary">Create</button>
                             </form>
 
                         </div>

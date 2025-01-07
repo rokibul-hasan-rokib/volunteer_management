@@ -12,6 +12,15 @@ class Task extends Model
 
     protected $guarded = [];
 
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
+
+    const STATUS_LIST = [
+        self::STATUS_ACTIVE => 'Active',
+        self::STATUS_INACTIVE => 'Inactive',
+    ];
+
+
     public function getAllTasks() {
         return self::query()->get();
     }

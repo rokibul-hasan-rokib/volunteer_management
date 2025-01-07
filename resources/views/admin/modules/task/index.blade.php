@@ -26,6 +26,11 @@ erbhnserthneh
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Task</h5>
+                            <div class="d-flex justify-content-between mb-4">
+                                <a href="{{ route('task.create') }}" class="btn btn-primary">Create Task</a>
+                            </div>
+
+
 
 
                             <!-- Table with stripped rows -->
@@ -44,15 +49,17 @@ erbhnserthneh
                                     @foreach($tasks as $task)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $task->name }}</td>
-                                        <td>{{ $task->event->title }}</td>
+                                        <td>{{ $task->title }}</td>
+                                        <td>{{ $task->event->name }}</td>
                                         <td>{{ $task->user->name }}</td>
                                         <td>{{ $task->status }}</td>
                                         <td>
+                                            <a href="{{ route('task.edit', $task->id) }}"
+                                                class="btn btn-sm btn-warning">Edit</a>
                                             <form action="{{ route('task.destroy', $task->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -12,11 +12,16 @@ class Event extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'event_date' => 'datetime', // Ensure 'start_date' is cast to Carbon instance
+    ];
+
+
     final public function getAllEvents() {
         return self::query()->get();
     }
 
-    final public function preparaData(Request $request) {
+    final public function prepareData(Request $request) {
         return [
           "name" => $request->input('name'),
           "description" => $request->input('description'),
@@ -35,6 +40,10 @@ class Event extends Model
 
    final public function deleteEvent(Event $event) {
        return $event->delete();
+   }
+
+   public function getEventAssoc() {
+       return self::query()->pluck('name', 'id');
    }
 
     public function project() {

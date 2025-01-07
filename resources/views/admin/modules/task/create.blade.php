@@ -29,9 +29,9 @@
                             <h5 class="card-title">Food Created Form</h5>
 
                             <!-- General Form Elements -->
-                            <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('task.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @include('admin.modules.project.partials.form')
+                                @include('admin.modules.task.partials.form')
                                 <button type="submit" class="btn btn-primary">Add Food</button>
                             </form>
 

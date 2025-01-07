@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +23,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.event.create');
+        $project = (new Project())->getProjectAssoc();
+        return view('admin.modules.event.create', compact('project'));
     }
 
     /**
@@ -54,7 +56,9 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('admin.modules.event.edit', compact('event'));
+        $project = (new Project())->getProjectAssoc();
+        $event->end_date = \Carbon\Carbon::parse($event->end_date);
+        return view('admin.modules.event.edit', compact('event', 'project'));
     }
 
     /**

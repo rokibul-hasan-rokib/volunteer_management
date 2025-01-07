@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+@extends('admin.layouts.master')
 @section('title')
     create agent
 @endsection
@@ -33,19 +33,23 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Agent Form</h5>
+                        <h5 class="card-title">Project Form</h5>
 
                         <!-- General Form Elements -->
+                        {{ html()->modelForm($project, 'PUT', route('project.update', $project->id))->open() }}
+                        <div class="row justify-content-center">
+                            @include('admin.modules.project.partials.editform')
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ html()->form()->close() }}
 
 
-                        <form action="{{ route('project.update', $project->id) }}" method="POST"
-                            enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
-                            @include('admin.modules.project.partials.form')
-
-                            <button type="submit" class="btn btn-primary mt-2">Update</button>
-                        </form>
 
 
 

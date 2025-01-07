@@ -27,6 +27,10 @@ erbhnserthneh
                         <div class="card-body">
                             <h5 class="card-title">Event</h5>
 
+                            <div class="d-flex justify-content-between mb-4">
+                                <a href="{{ route('event.create') }}" class="btn btn-primary">Create Event</a>
+                            </div>
+
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -45,8 +49,10 @@ erbhnserthneh
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $event->name }}</td>
                                         <td>{{ $event->event_date }}</td>
-                                        <td>{{ $event->project->title }}</td>
+                                        <td>{{ $event->project->name }}</td>
                                         <td>
+                                            <a href="{{ route('event.edit', $event->id) }}"
+                                                class="btn btn-sm btn-warning">Edit</a>
                                             <form action="{{ route('event.destroy', $event->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')

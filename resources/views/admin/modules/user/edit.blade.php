@@ -26,14 +26,22 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Food Created Form</h5>
+                            <h5 class="card-title">User Created Form</h5>
 
                             <!-- General Form Elements -->
-                            <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @include('admin.modules.project.partials.form')
-                                <button type="submit" class="btn btn-primary">Add Food</button>
-                            </form>
+                            <!-- General Form Elements -->
+                        {{ html()->modelForm($user, 'PUT', route('user.update', $user->id))->open() }}
+                        <div class="row justify-content-center">
+                            @include('admin.modules.user.partials.editform')
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ html()->form()->close() }}
 
                         </div>
                     </div>

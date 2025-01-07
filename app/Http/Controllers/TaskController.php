@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Project;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +25,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.task.create');
+        $event = (new Event())->getEventAssoc();
+        $user = (new User())->getUserAssoc();
+        return view('admin.modules.task.create', compact('event', 'user'));
     }
 
     /**
@@ -54,7 +59,9 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        return view('admin.modules.task.edit', compact('task'));
+        $event = (new Event())->getEventAssoc();
+        $user = (new User())->getUserAssoc();
+        return view('admin.modules.task.edit', compact('task', 'event', 'user'));
     }
 
     /**

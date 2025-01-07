@@ -28,12 +28,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Food Created Form</h5>
 
-                            <!-- General Form Elements -->
-                            <form action="{{ route('event.store') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @include('admin.modules.event.partials.form')
-                                <button type="submit" class="btn btn-primary">Create Event</button>
-                            </form>
+                                                    <!-- General Form Elements -->
+                        {{ html()->modelForm($event, 'PUT', route('event.update', $event->id))->open() }}
+                        <div class="row justify-content-center">
+                            @include('admin.modules.event.partials.editform')
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-2">
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{ html()->form()->close() }}
 
                         </div>
                     </div>

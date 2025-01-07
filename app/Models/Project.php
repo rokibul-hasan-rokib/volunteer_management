@@ -20,6 +20,11 @@ class Project extends Model
         self::STATUS_INACTIVE => 'Inactive',
     ];
 
+    protected $casts = [
+        'start_date' => 'datetime', // Ensure 'start_date' is cast to Carbon instance
+        'end_date' => 'datetime',   // If needed, also cast 'end_date' to datetime
+    ];
+
     final public function getAllProjects(){
         return self::query()->get();
     }
@@ -52,8 +57,9 @@ class Project extends Model
 
     final public function getProjectAssoc()
     {
-      return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id')->get();
+        return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id');
     }
+
 
 
 

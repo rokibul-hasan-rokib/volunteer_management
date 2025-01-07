@@ -56,6 +56,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        $project->start_date = \Carbon\Carbon::parse($project->start_date);
+        $project->end_date = \Carbon\Carbon::parse($project->end_date);
         return view('admin.modules.project.edit', compact('project'));
     }
 
