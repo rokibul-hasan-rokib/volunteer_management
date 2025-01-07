@@ -42,10 +42,10 @@ Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('co
 
 Route::get('/', function () {
     return view('frontend.pages.home.index');
-});
+})->name('home');
 Route::get('/contact', function () {
     return view('frontend.pages.contact.index');
-});
+})->name('contact');
 Route::get('/blogs', function () {
     return view('frontend.pages.blog.index');
 });

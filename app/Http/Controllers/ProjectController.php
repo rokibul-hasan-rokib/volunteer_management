@@ -31,6 +31,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         try {
             DB::beginTransaction();
             $project = (new Project())->storeProject($request);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -16,10 +17,14 @@ class ContactController extends Controller
     final public function store(Request $request) {
         // dd($request->all());
         try {
+            DB::beginTransaction();
             $contact = (new Contact())->storeContact($request);
-            return redirect()->back();
+            alert_success(__('Information Send Successfully'));
+            DB::commit();
+            return redirect()->route('home')->with('success','Contact Information Send Successfully');
         } catch (\Throwable $th) {
-            return response()->json($th);
+            DB::rollBack();
+            return redirect()->route('home');
         }
     }
 
@@ -28,7 +33,7 @@ class ContactController extends Controller
             (new Contact())->deleteContact($contact);
             return redirect()->back();
         } catch (\Throwable $th) {
-            return response()->json($th);
+            return redirect()->back();
         }
     }
 }

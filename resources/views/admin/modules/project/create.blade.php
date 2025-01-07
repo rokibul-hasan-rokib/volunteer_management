@@ -32,7 +32,7 @@
                             <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @include('admin.modules.project.partials.form')
-                                <button type="submit" class="btn btn-primary">Add Food</button>
+                                <button type="submit" class="btn btn-primary mt-2">Create</button>
                             </form>
 
                         </div>
