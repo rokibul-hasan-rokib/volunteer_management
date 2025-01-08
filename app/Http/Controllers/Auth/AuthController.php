@@ -30,6 +30,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        alert_success('User created successfully');
         // Redirect to the questions page with user ID
         return redirect()->route('login.page');
     }
@@ -46,9 +47,9 @@ class AuthController extends Controller
 
         $userCredential = $request->only('email','password');
         if(Auth::attempt($userCredential)){
+            alert_success('User Login successfully');
             return redirect('/dashboard');
         }
-
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
@@ -56,6 +57,7 @@ class AuthController extends Controller
     public function logout(Request $request){
         $request->session()->flush();
         Auth::logout();
+        alert_success('User Logout successfully');
         return redirect('/login');
     }
 }

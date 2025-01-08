@@ -4,6 +4,18 @@
 @endsection
 @section('content')
 
+      <!-- banner -->
+      <section class="banner bg-cover position-relative d-flex justify-content-center align-items-center"
+      data-background="{{ asset('frontend/images/banner/banner2.jpg') }}">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 text-center">
+                  <h1 class="display-1 text-white font-weight-bold font-primary">Volenteer Management</h1>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- /banner -->
 
     <!-- service -->
     <section class="section">
@@ -67,14 +79,14 @@
     <!-- feature -->
     <section class="section bg-secondary position-relative">
         <div class="bg-image overlay-secondary">
-            <img src="{{ asset('frontend/images/backgrounds/feature-bg.jpg') }}" alt="bg-image">
+            <img src="{{ asset('frontend/images/feature.jpg') }}" alt="bg-image">
         </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-9 mx-auto">
                     <div class="row align-items-center">
                         <div class="col-lg-4 mb-4 mb-lg-0">
-                            <img src="{{ asset('frontend/images/feature/feature-1.jpg') }}" alt="feature-image"
+                            <img src="{{ asset('frontend/images/feature.jpg') }}" alt="feature-image"
                                 class="img-fluid">
                         </div>
                         <div class="col-lg-7 offset-lg-1">
@@ -145,7 +157,7 @@
             <div class="row no-gutters">
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow">
-                        <img src="images/team/member-1.jpg" alt="team-member" class="card-img-top">
+                        <img src="{{ asset('frontend/images/team/member-1.jpg') }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center position-relative zindex-1">
                             <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
                             <i>Designer</i>
@@ -154,7 +166,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow">
-                        <img src="images/team/member-2.jpg" alt="team-member" class="card-img-top">
+                        <img src="{{ asset('frontend/images/team/member-2.jpg') }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center position-relative zindex-1">
                             <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
                             <i>Developer</i>
@@ -163,7 +175,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow">
-                        <img src="images/team/member-3.jpg" alt="team-member" class="card-img-top">
+                        <img src="{{ asset('frontend/images/team/member-3.jpg') }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center position-relative zindex-1">
                             <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
                             <i>Manager</i>
@@ -172,7 +184,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow">
-                        <img src="images/team/member-4.jpg" alt="team-member" class="card-img-top">
+                        <img src="{{ asset('frontend/images/team/member-4.jpg') }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center">
                             <h4>Devid Json</h4>
                             <i>CEO</i>
@@ -185,8 +197,8 @@
     <!-- /team -->
 
     <!-- about -->
-    <section class="section-lg position-relative bg-cover" data-background="images/backgrounds/about-bg.jpg">
-        <img src="images/backgrounds/about-bg-overlay.png" alt="overlay" class="overlay-image img-fluid">
+    <section class="section-lg position-relative bg-cover" data-background="{{ asset('frontend/images/backgrounds/about-bg.jpg') }}">
+        <img src="{{ asset('frontend/images/backgrounds/about-bg-overlay.png') }}" alt="overlay" class="overlay-image img-fluid">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-6 col-md-8 col-sm-7 col-8">
@@ -211,7 +223,7 @@
 
     <!-- project -->
     <section class="section">
-        <div class="container-fluid px-0">
+        {{-- <div class="container-fluid px-0">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
                     <h2>Our Feature Works</h2>
@@ -222,7 +234,7 @@
             <div class="row no-gutters shuffle-wrapper">
                 <div class="col-lg-4 col-md-6 shuffle-item">
                     <div class="project-item">
-                        <img src="images/project/project-1.jpg" alt="project-image" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/project/project-1.jpg') }}" alt="project-image" class="img-fluid w-100">
                         <div class="project-hover bg-secondary px-4 py-3">
                             <a href="#" class="text-white h4">Project title</a>
                             <a href="#"><i class="ti-link icon-xs text-white"></i></a>
@@ -231,7 +243,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 shuffle-item">
                     <div class="project-item">
-                        <img src="images/project/project-2.jpg" alt="project-image" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/project/project-2.jpg') }}" alt="project-image" class="img-fluid w-100">
                         <div class="project-hover bg-secondary px-4 py-3">
                             <a href="#" class="text-white h4">Project title</a>
                             <a href="#"><i class="ti-link icon-xs text-white"></i></a>
@@ -240,7 +252,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 shuffle-item">
                     <div class="project-item">
-                        <img src="images/project/project-3.jpg" alt="project-image" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/project/project-3.jpg') }}" alt="project-image" class="img-fluid w-100">
                         <div class="project-hover bg-secondary px-4 py-3">
                             <a href="#" class="text-white h4">Project title</a>
                             <a href="#"><i class="ti-link icon-xs text-white"></i></a>
@@ -249,7 +261,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 shuffle-item">
                     <div class="project-item">
-                        <img src="images/project/project-4.jpg" alt="project-image" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/project/project-4.jpg') }}" alt="project-image" class="img-fluid w-100">
                         <div class="project-hover bg-secondary px-4 py-3">
                             <a href="#" class="text-white h4">Project title</a>
                             <a href="#"><i class="ti-link icon-xs text-white"></i></a>
@@ -258,7 +270,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 shuffle-item">
                     <div class="project-item">
-                        <img src="images/project/project-5.jpg" alt="project-image" class="img-fluid w-100">
+                        <img src="{{ asset('frontend/images/project/project-5.jpg') }}" alt="project-image" class="img-fluid w-100">
                         <div class="project-hover bg-secondary px-4 py-3">
                             <a href="#" class="text-white h4">Project title</a>
                             <a href="#"><i class="ti-link icon-xs text-white"></i></a>
@@ -266,13 +278,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
     <!-- /project -->
 
     <!-- call to action -->
     <section>
-        <div class="container section-sm overlay-secondary-half bg-cover" data-background="images/backgrounds/cta-bg.jpg">
+        <div class="container section-sm overlay-secondary-half bg-cover" data-background="{{ asset('frontend/images/backgrounds/cta-bg.jpg') }}">
             <div class="row">
                 <div class="col-lg-8 offset-lg-1">
                     <h2 class="text-gradient-primary">Let's Start With Us!</h2>
@@ -286,7 +298,7 @@
 
     <!-- pricing -->
     <section class="section pb-0">
-        <div class="container">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
                     <h2>Our Smart Pricing Table</h2>
@@ -352,7 +364,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
     <!-- /pricing -->
 
@@ -368,7 +380,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <article class="card">
-                        <img src="images/blog/post-1.jpg" alt="post-thumb" class="card-img-top mb-2">
+                        <img src="{{ asset('frontend/images/blog/post-1.jpg') }}" alt="post-thumb" class="card-img-top mb-2">
                         <div class="card-body p-0">
                             <time>January 15, 2018</time>
                             <a href="blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How
@@ -380,7 +392,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <article class="card">
-                        <img src="images/blog/post-2.jpg" alt="post-thumb" class="card-img-top mb-2">
+                        <img src="{{ asset('frontend/images/blog/post-2.jpg') }}" alt="post-thumb" class="card-img-top mb-2">
                         <div class="card-body p-0">
                             <time>January 15, 2018</time>
                             <a href="blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How
@@ -392,7 +404,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                     <article class="card">
-                        <img src="images/blog/post-3.jpg" alt="post-thumb" class="card-img-top mb-2">
+                        <img src="{{ asset('frontend/images/blog/post-3.jpg') }}" alt="post-thumb" class="card-img-top mb-2">
                         <div class="card-body p-0">
                             <time>January 15, 2018</time>
                             <a href="blog-single" class="h4 card-title d-block my-3 text-dark hover-text-underline">How

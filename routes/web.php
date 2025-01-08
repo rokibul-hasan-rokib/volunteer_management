@@ -49,3 +49,12 @@ Route::get('/contact', function () {
 Route::get('/blogs', function () {
     return view('frontend.pages.blog.index');
 });
+Route::get('/about', function () {
+    return view('frontend.pages.about.index');
+})->name('about');
+Route::get('/event', function () {
+    return view('frontend.pages.event.index');
+})->name('event');
+Route::get('/project', function () {
+    return view('frontend.pages.project.index');
+})->name('project');
