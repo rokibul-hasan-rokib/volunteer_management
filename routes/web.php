@@ -52,9 +52,9 @@ Route::get('/blogs', function () {
 Route::get('/about', function () {
     return view('frontend.pages.about.index');
 })->name('about');
-Route::get('/event', function () {
+Route::get('/events', function () {
     return view('frontend.pages.event.index');
-})->name('event');
-Route::get('/project', function () {
+})->name('events');
+Route::get('/projects', function () {
     return view('frontend.pages.project.index');
-})->name('project');
+})->name('projects');

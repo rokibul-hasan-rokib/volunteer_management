@@ -16,10 +16,10 @@
             <a class="nav-link" href="{{ route('about') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('event') }}">Events</a>
+            <a class="nav-link" href="{{ route('events') }}">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('project') }}">Project</a>
+            <a class="nav-link" href="{{ route('projects') }}">Project</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
