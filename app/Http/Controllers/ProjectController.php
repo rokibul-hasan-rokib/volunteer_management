@@ -42,7 +42,8 @@ class ProjectController extends Controller
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -77,7 +78,8 @@ class ProjectController extends Controller
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -94,6 +96,7 @@ class ProjectController extends Controller
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
             DB::rollBack();
+            alert_error(__('Failed! ' . $th->getMessage()));
             throw $th;
         }
     }

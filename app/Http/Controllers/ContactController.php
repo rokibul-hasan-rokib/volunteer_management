@@ -24,6 +24,7 @@ class ContactController extends Controller
             return redirect()->route('home')->with('success','Contact Information Send Successfully');
         } catch (\Throwable $th) {
             DB::rollBack();
+            alert_error(__('Failed! ' . $th->getMessage()));
             return redirect()->route('home');
         }
     }
@@ -33,6 +34,7 @@ class ContactController extends Controller
             (new Contact())->deleteContact($contact);
             return redirect()->back();
         } catch (\Throwable $th) {
+            alert_error(__('Failed! ' . $th->getMessage()));
             return redirect()->back();
         }
     }

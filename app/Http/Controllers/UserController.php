@@ -38,7 +38,8 @@ class UserController extends Controller
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -71,7 +72,8 @@ class UserController extends Controller
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -88,7 +90,8 @@ class UserController extends Controller
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 }

@@ -40,6 +40,7 @@ class EventController extends Controller
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
             DB::rollBack();
+            alert_error(__('Failed! ' . $th->getMessage()));
             throw $th;
         }
     }
@@ -75,6 +76,7 @@ class EventController extends Controller
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
             DB::rollBack();
+            alert_error(__('Failed! ' . $th->getMessage()));
             throw $th;
         }
     }
@@ -92,7 +94,7 @@ class EventController extends Controller
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
             return redirect()->back();
        }
     }

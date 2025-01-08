@@ -43,7 +43,8 @@ class TaskController extends Controller
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -78,7 +79,8 @@ class TaskController extends Controller
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 
@@ -95,7 +97,8 @@ class TaskController extends Controller
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
             DB::rollBack();
-            throw $th;
+            alert_error(__('Failed! ' . $th->getMessage()));
+            return redirect()->back();
         }
     }
 }
