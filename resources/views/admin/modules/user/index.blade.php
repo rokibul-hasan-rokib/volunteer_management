@@ -55,12 +55,14 @@ erbhnserthneh
                                         <td>{{ $user->phone }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>{{ $user->role }}</td>
-                                        <td>{{ $user->status }}</td>
+                                        <td>{{ \App\Models\User::STATUS_LIST[$user->status] }}</td>
                                         <td>
+                                        <a href="{{ route('user.edit', $user->id) }}"
+                                        class="btn btn-sm btn-warning">Edit</a>
                                             <form action="{{ route('user.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

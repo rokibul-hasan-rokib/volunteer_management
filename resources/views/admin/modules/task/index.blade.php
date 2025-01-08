@@ -52,7 +52,7 @@ erbhnserthneh
                                         <td>{{ $task->title }}</td>
                                         <td>{{ $task->event->name }}</td>
                                         <td>{{ $task->user->name }}</td>
-                                        <td>{{ $task->status }}</td>
+                                        <td>{{ \App\Models\Task::STATUS_LIST[$task->status] }}</td>
                                         <td>
                                             <a href="{{ route('task.edit', $task->id) }}"
                                                 class="btn btn-sm btn-warning">Edit</a>

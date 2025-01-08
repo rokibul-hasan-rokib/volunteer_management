@@ -54,7 +54,7 @@ erbhnserthneh
                                             <td>{{ \Carbon\Carbon::parse($project->end_date)->format('F j, Y') }}</td>
 
 
-                                            <td>{{ $project->status }}</td>
+                                            <td>{{ \App\Models\Project::STATUS_LIST[$project->status] }}</td>
                                             <td>
                                                 <a href="{{ route('project.edit', $project->id) }}"
                                                     class="btn btn-sm btn-warning">Edit</a>
