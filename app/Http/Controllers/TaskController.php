@@ -39,6 +39,7 @@ class TaskController extends Controller
             DB::beginTransaction();
             $task = (new Task())->storeTask($request);
             DB::commit();
+            alert_success('Task created successfully');
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -72,6 +73,7 @@ class TaskController extends Controller
         try {
             DB::beginTransaction();
             (new Task())->updateTask($request, $task);
+            alert_success('Task updated successfully');
             DB::commit();
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
@@ -89,6 +91,7 @@ class TaskController extends Controller
             DB::beginTransaction();
             (new Task())->deleteTask($task);
             DB::commit();
+            alert_success('Task deleted successfully');
             return redirect()->route('task.index');
         } catch (\Throwable $th) {
             DB::rollBack();

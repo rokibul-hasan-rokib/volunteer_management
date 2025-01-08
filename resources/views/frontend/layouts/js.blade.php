@@ -20,3 +20,18 @@
 
 <!-- Main Script -->
 <script src="{{ asset('frontend/js/script.js') }}"></script>
+<script>
+    $('.select2').select2()
+
+    if ('{{ session()->has('message') }}') {
+        Swal.fire({
+            position: "top-end",
+            icon: "{{ session()->get('class') == 'success' ? 'success' : 'error' }}",
+            title: "{{ session()->get('message') }}",
+            showConfirmButton: false,
+            timer: 3000,
+            toast: true,
+            timerProgressBar: true
+        });
+    }
+</script>

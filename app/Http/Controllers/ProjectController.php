@@ -6,6 +6,8 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function Laravel\Prompts\alert;
+
 class ProjectController extends Controller
 {
     /**
@@ -35,6 +37,7 @@ class ProjectController extends Controller
         try {
             DB::beginTransaction();
             $project = (new Project())->storeProject($request);
+            alert_success('Project created successfully');
             DB::commit();
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
@@ -69,6 +72,7 @@ class ProjectController extends Controller
         try {
             DB::beginTransaction();
             (new Project())->updateProject($request, $project);
+            alert_success('Project updated successfully');
             DB::commit();
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
@@ -86,6 +90,7 @@ class ProjectController extends Controller
             DB::beginTransaction();
             (new Project())->deleteProject($project);
             DB::commit();
+            alert_success('Project deleted successfully');
             return redirect()->route('project.index');
         } catch (\Throwable $th) {
             DB::rollBack();

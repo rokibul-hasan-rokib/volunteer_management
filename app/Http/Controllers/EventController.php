@@ -36,6 +36,7 @@ class EventController extends Controller
             DB::beginTransaction();
             $event = (new Event())->storeEvent($request);
             DB::commit();
+            alert_success('Event created successfully');
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -69,6 +70,7 @@ class EventController extends Controller
         try {
             DB::beginTransaction();
             (new Event())->updateEvent($request, $event);
+            alert_success('Event updated successfully');
             DB::commit();
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
@@ -86,6 +88,7 @@ class EventController extends Controller
             DB::beginTransaction();
             (new Event())->deleteEvent($event);
             DB::commit();
+            alert_success('Event deleted successfully');
             return redirect()->route('event.index');
         } catch (\Throwable $th) {
             DB::rollBack();

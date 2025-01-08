@@ -34,6 +34,7 @@ class UserController extends Controller
             DB::beginTransaction();
             $user = (new User())->storeUser($request);
             DB::commit();
+            alert_success('User created successfully');
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -65,6 +66,7 @@ class UserController extends Controller
         try {
             DB::beginTransaction();
             (new User())->updateUser($request, $user);
+            alert_success('User updated successfully');
             DB::commit();
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
@@ -82,6 +84,7 @@ class UserController extends Controller
             DB::beginTransaction();
             (new User())->deleteUser($user);
             DB::commit();
+            alert_success('User deleted successfully');
             return redirect()->route('user.index');
         } catch (\Throwable $th) {
             DB::rollBack();
