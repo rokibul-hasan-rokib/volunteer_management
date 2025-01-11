@@ -17,7 +17,7 @@
   </section>
   <!-- /page-title -->
 
-<main id="main">
+<main id="main" class="mt-3">
 
 
     <section class="inner-page">
