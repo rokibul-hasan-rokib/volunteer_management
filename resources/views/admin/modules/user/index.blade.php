@@ -16,7 +16,7 @@
                     <li class="breadcrumb-item active">Data</li>
                 </ol>
             </nav>
-        </div><!--End Page Title -->
+        </div>
 
         <section class="section">
             <div class="row">
