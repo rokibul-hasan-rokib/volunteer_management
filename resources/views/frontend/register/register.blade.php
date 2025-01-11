@@ -5,18 +5,17 @@
 @endsection
 
 @section('content')
-      <!-- banner -->
-      <section class="banner bg-cover position-relative d-flex justify-content-center align-items-center"
-      data-background="{{ asset('frontend/images/banner/banner2.jpg') }}">
-      <div class="container">
-          <div class="row">
-              <div class="col-12 text-center">
-                  <h1 class="display-1 text-white font-weight-bold font-primary">Volenteer Management</h1>
-              </div>
-          </div>
+    <!-- page-title -->
+    <section class="page-title bg-cover" data-background="{{ asset('frontend/images/backgrounds/page-title.jpg') }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-1 text-white font-weight-bold font-primary">Register Page</h1>
+        </div>
       </div>
+    </div>
   </section>
-  <!-- /banner -->
+  <!-- /page-title -->
 
 <main id="main">
 
