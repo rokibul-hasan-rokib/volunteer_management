@@ -42,6 +42,7 @@
                         <img src="{{ asset('frontend/images/team/member-2.jpg') }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center position-relative zindex-1">
                             <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
                             <i>Developer</i>
                         </div>
                     </div>
@@ -52,6 +53,7 @@
                         <div class="card-body text-center position-relative zindex-1">
                             <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
                             <i>Manager</i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus eius consequatur excepturi est non illo eveniet impedit aspernatur beatae ut.</p>
                         </div>
                     </div>
                 </div>
