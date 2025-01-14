@@ -38,6 +38,7 @@ erbhnserthneh
                                     <tr>
                                         <th>S/L</th>
                                         <th>Name</th>
+                                        <th>Image</th>
                                         <th>Event Date</th>
                                         <th>Project</th>
                                         <th>Actions</th>
@@ -48,6 +49,13 @@ erbhnserthneh
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $event->name }}</td>
+                                        <td>
+                                            @if ($event->image)
+                                                <img src="{{ asset($event->image) }}" width="50" height="50"
+                                                    alt="Event Image">
+                                            @endif
+
+                                        </td>
                                         <td>{{ $event->event_date }}</td>
                                         <td>{{ $event->project->name }}</td>
                                         <td>

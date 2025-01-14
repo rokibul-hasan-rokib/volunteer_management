@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    contact
+    role
 @endsection
 
 @section('content')
@@ -24,36 +24,39 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Contact</h5>
+                            <h5 class="card-title">Role</h5>
 
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     <tr>
-                                        <th>S/L</th>
+                                        <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Message</th>
+                                        <th>Role</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($contacts as $contact)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $contact->name }}</td>
-                                        <td>{{ $contact->email }}</td>
-                                        <td>{{ $contact->message }}</td>
-                                        <td>
-                                            <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($roles as $role)
+                                        <tr>
+                                            <td>{{ $role->id }}</td>
+                                            <td>{{ $role->name }}</td>
+                                            <td>{{ $role->email }}</td>
+                                            <td>{{ $role->role }}</td>
+                                            <td>
+                                                <a href="{{ route('role.edit', $role->id) }}"
+                                                    class="btn btn-warning btn-sm">Edit</a>
+                                                <form action="{{ route('role.destroy', $role->id) }}" method="POST"
+                                                    style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

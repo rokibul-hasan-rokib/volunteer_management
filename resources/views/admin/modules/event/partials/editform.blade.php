@@ -27,3 +27,16 @@
     <!-- Use $project->start_date -->
     <x-validation-error :error="$errors->first('event_date')" />
 </div>
+<div class="form-group mb-2">
+    <label for="image">Image:</label>
+    <input type="file" name="image" class="form-control">
+    @if ($event->image)
+        <div class="mt-2">
+            <img src="{{ asset('storage/' . $event->image) }}" alt="{{ $event->name }}"
+                width="150" class="img-thumbnail">
+        </div>
+        <small>Current image: {{ $event->image }}</small>
+    @endif
+    <x-validation-error :error="$errors->first('image')" />
+</div>
+

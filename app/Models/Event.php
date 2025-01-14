@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class Event extends Model
 {
@@ -22,8 +24,17 @@ class Event extends Model
     }
 
     final public function prepareData(Request $request) {
+        $imagePath = null;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = time(). '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('photos');
+            $file->move($destinationPath, $filename);
+            $imagePath = 'photos/' . $filename;
+        }
         return [
           "name" => $request->input('name'),
+          "image" => $imagePath,
           "description" => $request->input('description'),
           "event_date" => $request->input('event_date'),
           "project_id" => $request->input('project_id'),

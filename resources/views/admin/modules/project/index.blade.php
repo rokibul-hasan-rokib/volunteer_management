@@ -37,6 +37,7 @@ erbhnserthneh
                                     <tr>
                                         <th>S/L</th>
                                         <th>Name</th>
+                                        <th>Image</th>
                                         <th>Start Time</th>
                                         <th>End Time</th>
                                         <th>Status</th>
@@ -50,6 +51,13 @@ erbhnserthneh
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td>{{ $project->name }}</td>
+                                            <td>
+                                                @if ($project->image)
+                                                    <img src="{{ asset($project->image) }}" width="50" height="50"
+                                                        alt="Project Image">
+                                                @endif
+
+                                            </td>
                                             <td>{{ \Carbon\Carbon::parse($project->start_date)->format('F j, Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($project->end_date)->format('F j, Y') }}</td>
 

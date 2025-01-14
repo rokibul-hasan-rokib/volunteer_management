@@ -32,6 +32,12 @@
                   <span>Event</span>
               </a>
           </li><!-- End Profile Page Nav -->
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="{{ route('volunteer') }}">
+                  <i class="bi bi-person"></i>
+                  <span>Volunteer</span>
+              </a>
+          </li><!-- End Profile Page Nav -->
           {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('abouts.index')}}">
           <i class="bi bi-envelope"></i>
@@ -53,6 +59,12 @@
               <a class="nav-link collapsed" href="{{ route('contacts') }}">
                   <i class="bi bi-question-circle"></i>
                   <span>Contact</span>
+              </a>
+          </li><!-- End F.A.Q Page Nav -->
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="{{ route('role.index') }}">
+                  <i class="bi bi-question-circle"></i>
+                  <span>Role</span>
               </a>
           </li><!-- End F.A.Q Page Nav -->
           {{-- @elseif(auth()->user()->role == \App\Models\User::ROLE_USER) --}}

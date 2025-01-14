@@ -42,3 +42,15 @@
     {{ html()->select('status', \App\Models\Project::STATUS_LIST)->class('form-select ' . ($errors->has('status') ? 'is-invalid' : ''))->placeholder(__('Select Status')) }}
     <x-validation-error :error="$errors->first('status')" />
 </div>
+<div class="form-group mb-2">
+    <label for="image">Image:</label>
+    <input type="file" name="image" class="form-control">
+    @if ($project->image)
+        <div class="mt-2">
+            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}"
+                width="150" class="img-thumbnail">
+        </div>
+        <small>Current image: {{ $project->image }}</small>
+    @endif
+    <x-validation-error :error="$errors->first('image')" />
+</div>

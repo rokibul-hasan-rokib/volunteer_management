@@ -21,6 +21,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'address',
+        'role',
+        'status',
         'password',
     ];
 
@@ -101,6 +105,11 @@ class User extends Authenticatable
     final public function getUserAssoc()
     {
       return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id')->toArray();
+    }
+
+    final public function getVolenteer()
+    {
+        return self::query()->where('role', self::ROLE_VOLUNTEER)->get();
     }
 
 }

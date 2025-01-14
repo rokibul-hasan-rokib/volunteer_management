@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('title')
-    contact
+    role
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Contact</h5>
+                            <h5 class="card-title">Role</h5>
 
 
                             <!-- Table with stripped rows -->
@@ -34,26 +34,16 @@
                                         <th>S/L</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Message</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($contacts as $contact)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $contact->name }}</td>
-                                        <td>{{ $contact->email }}</td>
-                                        <td>{{ $contact->message }}</td>
-                                        <td>
-                                            <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($volunteers as $volenteer)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $volenteer->name }}</td>
+                                            <td>{{ $volenteer->email }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

@@ -37,3 +37,8 @@
       {{ html()->select('status', \App\Models\Project::STATUS_LIST)->class('form-select ' . ($errors->has('status') ? 'is-invalid' : ''))->placeholder(__('Select status')) }}
       <x-validation-error :error="$errors->first('status')" />
   </div>
+  <div class="form-group mt-3">
+    <label for="image">Image:</label>
+    <input type="file" name="image" class="form-control">
+    <x-validation-error :error="$errors->first('image')" />
+  </div>
