@@ -10,7 +10,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="display-1 text-white font-weight-bold font-primary">All Event</h1>
+          <h1 class="display-1 text-white font-weight-bold font-primary">All Events</h1>
         </div>
       </div>
     </div>
