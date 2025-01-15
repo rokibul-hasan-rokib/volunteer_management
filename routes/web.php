@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TaskController;
@@ -59,9 +60,6 @@ Route::get('/blogs', function () {
 Route::get('/about', function () {
     return view('frontend.pages.about.index');
 })->name('about');
-Route::get('/events', function () {
-    return view('frontend.pages.event.index');
-})->name('events');
-Route::get('/projects', function () {
-    return view('frontend.pages.project.index');
-})->name('projects');
+
+Route::get('/events',[FrontendController::class, 'events'])->name('events');
+Route::get('/projects',[FrontendController::class, 'projects'])->name('projects');

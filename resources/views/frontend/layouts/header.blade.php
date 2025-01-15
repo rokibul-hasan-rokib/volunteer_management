@@ -19,7 +19,7 @@
             <a class="nav-link" href="{{ route('events') }}">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('projects') }}">Project</a>
+            <a class="nav-link" href="{{ route('projects') }}">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('contact') }}">Contact</a>

@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    final public function products()
+    final public function projects()
     {
         $projects = (new Project())->getAllProjects();
-        return view('frontend.pages.product.index', compact('projects'));
+        return view('frontend.pages.project.index', compact('projects'));
     }
 
     final public function events()
