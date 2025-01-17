@@ -19,4 +19,9 @@ class FrontendController extends Controller
         $events = (new Event())->getAllEvents();
         return view('frontend.pages.event.index', compact('events'));
     }
+
+    final public function volunteers()
+        {
+            
+        }
 }
