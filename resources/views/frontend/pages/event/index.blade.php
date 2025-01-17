@@ -29,132 +29,18 @@
                 </div>
             </div>
             <div class="row no-gutters">
+                @foreach ($events as $event)
                 <div class="col-lg-3 col-sm-6">
                     <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-1.jpg') }}" alt="team-member" class="card-img-top">
+                        <img src="{{ asset($event->image) }}" alt="team-member" class="card-img-top">
                         <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
-                            <i>Designer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
+                            <h4><a class="text-dark" href="team-single.html">{{$event->name}}</a></h4>
+                            <i>{{$event->date}}</i>
+                            <p>{{$event->description}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-2.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
-                            <i>Developer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-3.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
-                            <i>Manager</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-4.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center">
-                            <h4>Devid Json</h4>
-                            <i>CEO</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-1.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
-                            <i>Designer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-2.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
-                            <i>Developer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-3.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
-                            <i>Manager</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-4.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center">
-                            <h4>Devid Json</h4>
-                            <i>CEO</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-1.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Sara Adams</a></h4>
-                            <i>Designer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-2.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Tom Bills</a></h4>
-                            <i>Developer</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-3.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center position-relative zindex-1">
-                            <h4><a class="text-dark" href="team-single.html">Anna Walle</a></h4>
-                            <i>Manager</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="card hover-shadow">
-                        <img src="{{ asset('frontend/images/team/member-4.jpg') }}" alt="team-member" class="card-img-top">
-                        <div class="card-body text-center">
-                            <h4>Devid Json</h4>
-                            <i>CEO</i>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas exercitationem hic qui nisi accusamus voluptatum tenetur voluptate laborum quos aspernatur?</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
