@@ -112,4 +112,10 @@ class User extends Authenticatable
         return self::query()->where('role', self::ROLE_VOLUNTEER)->get();
     }
 
+    final public function getAdmin()
+    {
+        return self::qeury()->where('role', self::ROLE_ADMIN)->get();
+    }
+
+
 }

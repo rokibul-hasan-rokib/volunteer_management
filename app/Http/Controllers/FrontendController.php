@@ -22,6 +22,7 @@ class FrontendController extends Controller
 
     final public function volunteers()
         {
-            
+            $volenteers = (new User())->getAllVolenteers();
+            return view('frontend.pages.volenteer.index', compact('volenteers'));
         }
 }
