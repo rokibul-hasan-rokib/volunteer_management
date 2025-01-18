@@ -109,7 +109,7 @@ class User extends Authenticatable
 
     final public function getVolenteer()
     {
-        return self::query()->where('role', self::ROLE_VOLUNTEER)->get();
+        return self::query()->where('role', self::ROLE_VOLUNTEER)->pluck('name', 'id');
     }
 
     final public function getAdmin()
