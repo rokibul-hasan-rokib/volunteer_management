@@ -108,10 +108,10 @@ class User extends Authenticatable
       ->where('role', self::ROLE_VOLUNTEER)
       ->pluck('name', 'id')->toArray();
     }
-
+ 
     final public function getVolenteer()
     {
-        return self::query()->where('role', self::ROLE_VOLUNTEER)->pluck('name', 'id');
+        return self::query()->where('role', self::ROLE_VOLUNTEER)->get();
     }
 
     final public function getAdmin()
