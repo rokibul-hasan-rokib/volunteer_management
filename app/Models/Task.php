@@ -47,10 +47,10 @@ class Task extends Model
     }
 
     public function getVolunteerTasks()
-        {
-            $user = Auth::user();
-            return self::where('user_id', $user->id)->orderBy('id', 'desc')->get();
-        }
+    {
+        $user = Auth::user();
+        return self::where('user_id', $user->id)->orderBy('id', 'desc')->get();
+    }
 
 
     public function event() {

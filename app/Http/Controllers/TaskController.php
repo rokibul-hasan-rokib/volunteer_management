@@ -101,4 +101,10 @@ class TaskController extends Controller
             return redirect()->back();
         }
     }
+
+    public function getVolunteerTasks()
+    {
+       $volunteer_tasks = (new Task())->getVolunteerTasks();
+       return view('admin.modules.task.volunteer_tasks', compact('volunteer_tasks'));
+    }
 }
