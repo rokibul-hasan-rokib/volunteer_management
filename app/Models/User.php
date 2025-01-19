@@ -104,7 +104,9 @@ class User extends Authenticatable
 
     final public function getUserAssoc()
     {
-      return self::query()->where('status', self::STATUS_ACTIVE)->pluck('name', 'id')->toArray();
+      return self::query()->where('status', self::STATUS_ACTIVE)
+      ->where('role', self::ROLE_VOLUNTEER)
+      ->pluck('name', 'id')->toArray();
     }
 
     final public function getVolenteer()
