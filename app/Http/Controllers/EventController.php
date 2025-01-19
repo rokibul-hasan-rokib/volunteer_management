@@ -77,7 +77,7 @@ class EventController extends Controller
         } catch (\Throwable $th) {
             DB::rollBack();
             alert_error(__('Failed! ' . $th->getMessage()));
-            throw $th;
+            return redirect()->back();
         }
     }
 
