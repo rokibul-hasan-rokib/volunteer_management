@@ -65,6 +65,6 @@ Route::group(['middleware' => ['auth', 'role:admin,volunteer']], function () {
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/volenteer',[Volunteer::class, 'index'])->name('volunteer');
-
+    Route::get('/volunteer/task',[TaskController::class, 'getVolunteerTasks'])->name('volunteer.tasks');
 
 });
