@@ -10,7 +10,7 @@
               </a>
           </li><!-- End Dashboard Nav -->
 
-          {{-- @if (auth()->user()->role == \App\Models\User::ROLE_ADMIN) --}}
+          @if (auth()->user()->role == \App\Models\User::ROLE_ADMIN)
 
 
 
@@ -61,12 +61,7 @@
                   <span>Contact</span>
               </a>
           </li><!-- End F.A.Q Page Nav -->
-          <li class="nav-item">
-              <a class="nav-link collapsed" href="{{ route('role.index') }}">
-                  <i class="bi bi-question-circle"></i>
-                  <span>Role</span>
-              </a>
-          </li><!-- End F.A.Q Page Nav -->
+<!-- End F.A.Q Page Nav -->
           {{-- @elseif(auth()->user()->role == \App\Models\User::ROLE_USER) --}}
 
           <li class="nav-item">
@@ -75,9 +70,9 @@
                   <span>Task</span>
               </a>
           </li>
-          {{-- @else
+          @else
       <p>You do not have access to this section.</p>
-      @endif --}}
+      @endif
 
       </ul>
 

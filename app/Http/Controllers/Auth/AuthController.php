@@ -48,7 +48,7 @@ class AuthController extends Controller
         $userCredential = $request->only('email','password');
         if(Auth::attempt($userCredential)){
             alert_success('User Login successfully');
-            return redirect('/dashboard');
+            return redirect('/');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

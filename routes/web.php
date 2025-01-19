@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
 
 Route::get('/register',[AuthController::class, 'loadRegister'])->name('register');
@@ -33,15 +32,6 @@ Route::post('/register',[AuthController::class, 'register'])->name('register.sto
 Route::get('/login',[AuthController::class,'loadLogin'])->name('login.page');
 Route::post('/login',[AuthController::class,'userLogin'])->name('login');
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
-
-Route::resource('project', ProjectController::class);
-Route::resource('task', TaskController::class);
-Route::resource('event', EventController::class);
-Route::resource('user', UserController::class);
-
-Route::resource('role', RoleController::class);
-
-Route::get('/volenteer',[Volunteer::class, 'index'])->name('volunteer');
 
 
 Route::get('/contacts',[ContactController::class, 'index'])->name('contacts');
@@ -63,3 +53,18 @@ Route::get('/about', function () {
 
 Route::get('/events',[FrontendController::class, 'events'])->name('events');
 Route::get('/projects',[FrontendController::class, 'projects'])->name('projects');
+
+Route::group(['middleware' => ['auth', 'role:admin,volunteer']], function () {
+
+    Route::resource('project', ProjectController::class);
+    Route::resource('task', TaskController::class);
+    Route::resource('event', EventController::class);
+    Route::resource('user', UserController::class);
+
+
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/volenteer',[Volunteer::class, 'index'])->name('volunteer');
+
+
+});
