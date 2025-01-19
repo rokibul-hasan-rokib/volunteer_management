@@ -47,7 +47,7 @@
     <input type="file" name="image" class="form-control">
     @if ($project->image)
         <div class="mt-2">
-            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}"
+            <img src="{{ asset($project->image) }}" alt="{{ $project->name }}"
                 width="150" class="img-thumbnail">
         </div>
         <small>Current image: {{ $project->image }}</small>

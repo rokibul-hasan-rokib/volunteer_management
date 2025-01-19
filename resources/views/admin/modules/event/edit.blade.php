@@ -3,10 +3,6 @@
     edit event
 @endsection
 @section('content')
-
-
-
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -28,19 +24,23 @@
                         <div class="card-body">
                             <h5 class="card-title">Food Created Form</h5>
 
-                                                    <!-- General Form Elements -->
-                        {{ html()->modelForm($event, 'PUT', route('event.update', $event->id))->open() }}
-                        <div class="row justify-content-center">
-                            @include('admin.modules.event.partials.editform')
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-2">
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                            <!-- General Form Elements -->
+                            <!-- General Form Elements -->
+                            {{ html()->modelForm($event, 'PUT', route('event.update', $event->id))->attribute('enctype', 'multipart/form-data')->open() }}
+
+                            <div class="row justify-content-center">
+                                @include('admin.modules.event.partials.editform')
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-2">
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        {{ html()->form()->close() }}
+
+                            {{ html()->form()->close() }}
 
                         </div>
                     </div>
@@ -52,5 +52,4 @@
         </section>
 
     </main><!-- End #main -->
-
 @endsection

@@ -23,15 +23,21 @@ class Event extends Model
         return self::query()->get();
     }
 
-    final public function prepareData(Request $request) {
-        $imagePath = null;
-        if($request->hasFile('image')){
+    final public function prepareData(Request $request, $existingImage = null) {
+        $imagePath = $existingImage;
+
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time(). '_' . $file->getClientOriginalName();
+            $filename = time() . '_' . $file->getClientOriginalName();
             $destinationPath = public_path('photos');
             $file->move($destinationPath, $filename);
             $imagePath = 'photos/' . $filename;
+
+            if ($existingImage && file_exists(public_path($existingImage))) {
+                unlink(public_path($existingImage));
+            }
         }
+
         return [
           "name" => $request->input('name'),
           "image" => $imagePath,
