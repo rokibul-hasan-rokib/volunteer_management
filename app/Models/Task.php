@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Task extends Model
 {
@@ -44,6 +45,13 @@ class Task extends Model
     final public function deleteTask(Task $task) {
         return $task->delete();
     }
+
+    public function getVolunteerTasks()
+        {
+            $user = Auth::user();
+            return self::where('user_id', $user->id)->orderBy('id', 'desc')->get();
+        }
+
 
     public function event() {
         return $this->belongsTo(Event::class);
