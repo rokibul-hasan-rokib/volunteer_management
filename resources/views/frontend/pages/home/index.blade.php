@@ -23,11 +23,8 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
                     <h2 class="section-title">Our Services</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut
-                        aliquip ex ea commodo consequat.</p>
+                    <p class="lead">Great work I got a lot more than what I ordered, they are very legítimas and catchy. I went for one
+                        of them for my brand but is always better to have more options.</p>
                     <div class="section-border"></div>
                 </div>
             </div>
@@ -41,7 +38,7 @@
                                 <i class="icon-lg icon-watermark text-white ti-palette"></i>
                             </div>
                             <h4 class="mb-4">Design</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                            <p>Great work I got a lot more than what I ordered, they are very legítimas</p>
                         </div>
                     </div>
                 </div>
@@ -54,7 +51,7 @@
                                 <i class="icon-lg icon-watermark text-white ti-dashboard"></i>
                             </div>
                             <h4 class="mb-4">Development</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                            <p>Great work I got a lot more than what I ordered, they are very legítimas.</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +64,7 @@
                                 <i class="icon-lg icon-watermark text-white ti-announcement"></i>
                             </div>
                             <h4 class="mb-4">Marketing</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo</p>
+                            <p>Great work I got a lot more than what I ordered, they are very legítimas.</p>
                         </div>
                     </div>
                 </div>
@@ -100,8 +97,7 @@
                                         <i class="icon text-gradient-primary ti-vector mr-3"></i>
                                         <div class="media-body">
                                             <h4 class="text-white">User Experience</h4>
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmo</p>
+                                            <p class="text-light">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +106,7 @@
                                         <i class="icon text-gradient-primary ti-layout mr-3"></i>
                                         <div class="media-body">
                                             <h4 class="text-white">Responsive Layout</h4>
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmo</p>
+                                            <p class="text-light">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -120,8 +115,7 @@
                                         <i class="icon text-gradient-primary ti-headphone-alt mr-3"></i>
                                         <div class="media-body">
                                             <h4 class="text-white">Digital Solutions</h4>
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmo</p>
+                                            <p class="text-light">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -130,8 +124,7 @@
                                         <i class="icon text-gradient-primary ti-ruler-pencil mr-3"></i>
                                         <div class="media-body">
                                             <h4 class="text-white">Bootstrap 4x</h4>
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmo</p>
+                                            <p class="text-light">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +143,7 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
                     <h2>Our Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                    <p>Great work I got a lot more than what I ordered, they are very legítimas.</p>
                     <div class="section-border"></div>
                 </div>
             </div>
@@ -203,12 +196,7 @@
             <div class="row justify-content-between">
                 <div class="col-lg-6 col-md-8 col-sm-7 col-8">
                     <h2 class="text-white mb-4">Who We Are</h2>
-                    <p class="text-light mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor
-                        incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut
-                        aliquip ex ea commodo consequat.</p>
+                    <p class="text-light mb-4">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                     <a href="about.html" class="btn btn-primary">Read More</a>
                 </div>
                 <div class="col-md-2 col-sm-4 col-4 text-right align-self-end">
@@ -288,7 +276,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-1">
                     <h2 class="text-gradient-primary">Let's Start With Us!</h2>
-                    <p class="h4 font-weight-bold text-white mb-4">Lorem ipsum dolor sit amet, magna habemus ius ad</p>
+                    <p class="h4 font-weight-bold text-white mb-4">Great work I got a lot more than what I ordered, they are very legítimas.</p>
                     <a href="contact.html" class="btn btn-lg btn-primary">Let’s talk</a>
                 </div>
             </div>
