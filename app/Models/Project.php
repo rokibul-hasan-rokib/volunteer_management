@@ -34,17 +34,15 @@ class Project extends Model
     final public function prepareData(Request $request, $existingImage = null)
     {
         $imagePath = $existingImage;
-
+    
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $destinationPath = public_path('photos');
-            $file->move($destinationPath, $filename);
-            $imagePath = 'photos/' . $filename;
-
-            if ($existingImage && file_exists(public_path($existingImage))) {
-                unlink(public_path($existingImage));
+            $imagePath = $file->storeAs('public/photos', $filename);
+            if ($existingImage) {
+                Storage::delete($existingImage);
             }
+            $imagePath = str_replace('public/', 'storage/', $imagePath);
         }
 
         return [
